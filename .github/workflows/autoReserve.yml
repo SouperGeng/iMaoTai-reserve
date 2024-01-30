@@ -4,6 +4,8 @@
 name: imaotai-action
 
 on:
+  watch:
+    types: started
   push:
     branches: [ "master" ]
     paths:
