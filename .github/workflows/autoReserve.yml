@@ -48,6 +48,8 @@ jobs:
         env:
           PUSHPLUS_KEY: ${{ secrets.PUSHPLUS_KEY }}
           PRIVATE_AES_KEY: ${{ secrets.PRIVATE_AES_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python main.py
 
