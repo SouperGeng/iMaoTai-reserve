@@ -254,6 +254,7 @@ def send_msg(title, content):
 
 
 def send_telegram_msg(title, content):
+    logging.info("通知开始")
     if config.TELEGRAM_BOT_TOKEN is None or config.TELEGRAM_CHAT_ID is None:
         return
     url = f'https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage'

@@ -82,5 +82,5 @@ for section in configs.sections():
         logging.error(e)
 
 # 推送消息
-process.send_msg(s_title, s_content)
+# process.send_msg(s_title, s_content)
 process.send_telegram_msg(s_title, s_content)
