@@ -253,6 +253,18 @@ def send_msg(title, content):
     logging.info(f'通知推送结果：{r.status_code, r.text}')
 
 
+def send_telegram_msg(title, content):
+    if config.TELEGRAM_BOT_TOKEN is None or config.TELEGRAM_CHAT_ID is None:
+        return
+    url = f'https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage'
+    params = {
+        "chat_id": config.TELEGRAM_CHAT_ID,
+        "text": title + "\n\n" + content
+    }
+    r = requests.get(url, params=params)
+    logging.info(f'通知推送结果：{r.status_code, r.text}')
+
+
 # 核心代码，执行预约
 def reservation(params: dict, mobile: str):
     params.pop('userId')
